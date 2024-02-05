@@ -1,0 +1,14 @@
+[book]
+authors = ["Hermilo Cortés"]
+language = "es"
+multilingual = false
+src = "src"
+title = "Contenedores"
+
+[output.html]
+default-theme = "light"
+mathjax-support = true
+
+[output.html.playground]
+editable = true
+
