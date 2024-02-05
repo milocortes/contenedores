@@ -11,7 +11,7 @@ De las características del kernel, nos interesa conocer las que son esenciales 
 * **Capabilities** : permite a los procesos ejecutar ciertas operaciones sensibles en el kernel así como llamadas al sistema.
 * **Secure computing mode** : restringe el acceso a llamadas al sistema. 
 
-Estas características son transparentes en los sistemas **Linux**. Por tal motivo, inicialmente abordaremos la forma cómo podemos interactuar con el sistema mediante el *shell* (la linea de comandos, *CLI*-command line interface). En particular, se presenta la forma cómo se administran paquetes, se configuran usuarios y grupos, se monitorean y controlan procesos y recursos, etc. 
+Estas características son transparentes en los sistemas **Linux**. Por tal motivo, inicialmente abordaremos la forma cómo podemos interactuar con el sistema mediante el *shell* (la linea de comandos, *CLI-command line interface*). En particular, se presenta la forma cómo se administran paquetes, se configuran usuarios y grupos, se monitorean y controlan procesos y recursos, etc. 
 
 # Contenido
 El materíal está organizado de la siguiente manera:
