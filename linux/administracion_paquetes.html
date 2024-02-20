@@ -90,7 +90,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introducción</a></li><li class="chapter-item expanded affix "><li class="part-title">Introducción a Linux</li><li class="chapter-item expanded "><a href="../linux/instalacion_mv.html"><strong aria-hidden="true">1.</strong> Instalación de máquina virtual</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Introducción a la linea de comandos</div></li><li class="chapter-item expanded "><a href="../linux/administracion_paquetes.html" class="active"><strong aria-hidden="true">3.</strong> Administración de paquetes</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Configuración de usuarios y grupos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Jerarquía de directorios</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Almacenamiento y sistemas de archivos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Gestión de archivos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Monitoreo y control de procesos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Administración y monitoreo de uso de recursos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Introducción a programación shell</div></li><li class="chapter-item expanded affix "><li class="part-title">Virtualización</li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Virtualización como concepto</div></li><li class="chapter-item expanded affix "><li class="part-title">Máquinas virtuales</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Hipervisores</div></li><li class="chapter-item expanded affix "><li class="part-title">Contenedores</li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Background y conceptos esenciales</div></li><li class="chapter-item expanded affix "><li class="part-title">Docker</li><li class="chapter-item expanded affix "><li class="part-title">Apptainer</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introducción</a></li><li class="chapter-item expanded affix "><li class="part-title">Introducción a Linux</li><li class="chapter-item expanded "><a href="../linux/instalacion_mv.html"><strong aria-hidden="true">1.</strong> Instalación de máquina virtual</a></li><li class="chapter-item expanded "><a href="../linux/cli.html"><strong aria-hidden="true">2.</strong> Introducción a la linea de comandos</a></li><li class="chapter-item expanded "><a href="../linux/administracion_paquetes.html" class="active"><strong aria-hidden="true">3.</strong> Administración de paquetes</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Configuración de usuarios y grupos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Jerarquía de directorios</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Almacenamiento y sistemas de archivos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Gestión de archivos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Monitoreo y control de procesos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Administración y monitoreo de uso de recursos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Introducción a programación shell</div></li><li class="chapter-item expanded affix "><li class="part-title">Virtualización</li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Virtualización como concepto</div></li><li class="chapter-item expanded affix "><li class="part-title">Máquinas virtuales</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Hipervisores</div></li><li class="chapter-item expanded affix "><li class="part-title">Contenedores</li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Background y conceptos esenciales</div></li><li class="chapter-item expanded affix "><li class="part-title">Docker</li><li class="chapter-item expanded affix "><li class="part-title">Apptainer</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -309,7 +309,7 @@ sudo gdebi rstudio-server-2023.12.0-369-amd64.deb
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../linux/instalacion_mv.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../linux/cli.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -320,7 +320,7 @@ sudo gdebi rstudio-server-2023.12.0-369-amd64.deb
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../linux/instalacion_mv.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../linux/cli.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
@@ -328,6 +328,22 @@ sudo gdebi rstudio-server-2023.12.0-369-amd64.deb
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

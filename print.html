@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introducción</a></li><li class="chapter-item expanded affix "><li class="part-title">Introducción a Linux</li><li class="chapter-item expanded "><a href="linux/instalacion_mv.html"><strong aria-hidden="true">1.</strong> Instalación de máquina virtual</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Introducción a la linea de comandos</div></li><li class="chapter-item expanded "><a href="linux/administracion_paquetes.html"><strong aria-hidden="true">3.</strong> Administración de paquetes</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Configuración de usuarios y grupos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Jerarquía de directorios</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Almacenamiento y sistemas de archivos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Gestión de archivos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Monitoreo y control de procesos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Administración y monitoreo de uso de recursos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Introducción a programación shell</div></li><li class="chapter-item expanded affix "><li class="part-title">Virtualización</li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Virtualización como concepto</div></li><li class="chapter-item expanded affix "><li class="part-title">Máquinas virtuales</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Hipervisores</div></li><li class="chapter-item expanded affix "><li class="part-title">Contenedores</li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Background y conceptos esenciales</div></li><li class="chapter-item expanded affix "><li class="part-title">Docker</li><li class="chapter-item expanded affix "><li class="part-title">Apptainer</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introducción</a></li><li class="chapter-item expanded affix "><li class="part-title">Introducción a Linux</li><li class="chapter-item expanded "><a href="linux/instalacion_mv.html"><strong aria-hidden="true">1.</strong> Instalación de máquina virtual</a></li><li class="chapter-item expanded "><a href="linux/cli.html"><strong aria-hidden="true">2.</strong> Introducción a la linea de comandos</a></li><li class="chapter-item expanded "><a href="linux/administracion_paquetes.html"><strong aria-hidden="true">3.</strong> Administración de paquetes</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Configuración de usuarios y grupos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Jerarquía de directorios</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Almacenamiento y sistemas de archivos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Gestión de archivos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Monitoreo y control de procesos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Administración y monitoreo de uso de recursos</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Introducción a programación shell</div></li><li class="chapter-item expanded affix "><li class="part-title">Virtualización</li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Virtualización como concepto</div></li><li class="chapter-item expanded affix "><li class="part-title">Máquinas virtuales</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Hipervisores</div></li><li class="chapter-item expanded affix "><li class="part-title">Contenedores</li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Background y conceptos esenciales</div></li><li class="chapter-item expanded affix "><li class="part-title">Docker</li><li class="chapter-item expanded affix "><li class="part-title">Apptainer</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -268,6 +268,69 @@ ls
 <pre><code class="language-bash">sudo apt update
 sudo apt install gnome-session gdm3
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introducción-a-la-línea-de-comandos"><a class="header" href="#introducción-a-la-línea-de-comandos">Introducción a la línea de comandos</a></h1>
+<p>La línea de comandos, o <strong>shell</strong>, es la interfaz entre el usuario y los archivos y procesos que definen el estado de la computadora-incluyendo los archivos y procesos del sistema operativo. </p>
+<p>Podemos ingresar al shell al abrir una terminal. El shell proporciona una  <em>interface de linea de comando</em> (command line interface-CLI) que puede ser utilizada para ejecutar comandos y navegar a través del sistema de archivos del equipo. La línea de comandos también se le conoce como <em>prompt</em> y generalmente es denotado con un signo de pesos ($).</p>
+<p>Pero, <strong>¿Qué es exactamente el shell? El Shell es un lenguaje de programación</strong>.</p>
+<p>El shell es un lenguaje de programación que es ejecutado en la terminal. Al igual que otros lenguajes de programación, el shell:</p>
+<ul>
+<li>Puede recolectar muchas operaciones e integrarlas en una unidad.</li>
+<li>Aceptar insumos.</li>
+<li>Generar salidas.</li>
+<li>Tiene variables y estados.</li>
+<li>Caracteres especiales y nombres reservados.</li>
+</ul>
+<p>Al igual que los lenguajes de programación, hay muchos shells. Uno de los shells más utilizados es <strong>bash</strong>. Otro shell famoso es <strong>zsh</strong>. </p>
+<p><img src="linux/images/bash.png" alt="Bash" /></p>
+<p>El poder del shell se define por su transparencia. Al proporcionar acceso directo al sistema de archivos completo, el shell puede ser utilizado para efectuar casi cualquier tarea como :</p>
+<ul>
+<li>Encontrar archivos.</li>
+<li>Manipular archivos. </li>
+<li>Instalar paquetes.</li>
+<li>Ejecutar programas.</li>
+<li><strong>Navegar por el sistema de archivos</strong></li>
+</ul>
+<h2 id="sistema-de-archivos-de-linux"><a class="header" href="#sistema-de-archivos-de-linux">Sistema de Archivos de Linux</a></h2>
+<p>Un sistema de archivos es un conjunto de estructuras de datos que determina la forma como los datos del usuario son organizados en una unidad de almacenamiento. Los usuarios finales son capaces de interactuar con el sistema de archivos mediante métodos de acceso a archivos regulares. La gran mayoría de distribuciones modernas de Linux usan ya sea <strong>XFS</strong> o <strong>Ext4</strong> como sistemas de archivos por default. En ambos casos, estos sistemas de archivos crean conexiones jerárquicas entre archivos individuales y grupos de archivos con ubicaciones identificables (mediante indización) en la unidad de almacenamiento.</p>
+<p><img src="linux/images/arbol.png" alt="Bash" /></p>
+<p>¿Por qué necesitamos indizar la organización de nuestros archivos? Las unidades de almacenamiento proporcionan el medio físico de almacenamiento. El sistema de archivos proporciona el mecanismo lógico de organización de la información en esa unidad física de almacenamiento mediante la indización. El sistema de archivos usa la indización para proporcionar la apariencia de un conjunto organizado de directorios y archivos dentro de una división independiente de la unidad de almacenamiento conocida como <strong>partición</strong>.</p>
+<p>Todos los archivos en una partición se guardan en directorios debajo del directorio <strong>root</strong> (<em>raíz</em>), que está representado por el carácter / (barra diagonal). La forma en que están organizados estos directorios se rige en gran medida por el estándar de jerarquía del sistema de archivos UNIX (UNIX Filesystem Hierarchy Standard -FHS)</p>
+<p><img src="linux/images/linux_arbol.png" alt="Bash" /></p>
+<h2 id="herramientas-de-navegación-en-linux"><a class="header" href="#herramientas-de-navegación-en-linux">Herramientas de navegación en Linux</a></h2>
+<p>Las instrucciones más elementales de navegación en Linux son:</p>
+<ul>
+<li><code>ls</code></li>
+<li><code>pwd</code></li>
+<li><code>cd</code></li>
+<li><code>cat</code></li>
+<li><code>less</code> </li>
+</ul>
+<h3 id="instrucción-ls"><a class="header" href="#instrucción-ls">Instrucción <code>ls</code></a></h3>
+<p>Para listar los nombres de archivos y subdirectorios en el directorio actual, utilizamos la instrucción <code>ls</code>. Si además agregamos la bandera <code>l</code> la instrucción muestra el nombre de los objetos, los permisos, el propietario, el grupo, el tamaño, y el time stamp del archivo. Si ejecutamos la instrucción <code>ls -l</code> en el directorio <code>\var</code>, obtenemos la siguiente salida:</p>
+<pre><code class="language-bash">[vader@n0 ~]$ ls -l /var
+total 8
+drwxr-xr-x.  2 root root    6 Apr 10  2018 adm
+drwxr-xr-x.  5 root root   44 Oct 30  2020 cache
+drwxr-xr-x.  2 root root    6 Oct  1  2020 crash
+drwxr-xr-x.  3 root root   34 Feb 17 12:32 db
+drwxr-xr-x.  3 root root   18 Oct 30  2020 empty
+drwxr-xr-x.  2 root root    6 Apr 10  2018 games
+
+</code></pre>
+<p>En la instrucción anterior estamos utilizando la <strong>ruta absoluta</strong> del directorio <code>/var</code>. La ruta o espacio donde se encuentran nuestros archivos está hecho de directorios (folders o carpetas) anidados. En la jerga UNIX, la ubicación de cada directorio (y de cada archivo dentro de él) está dada por el <strong>path</strong> o <strong>ruta</strong>. Las rutas pueden ser <strong>absolutas</strong> o <strong>relativas</strong>. Una ruta es absoluta si esta empieza desde la raíz del arbol del sistema de archivos. Por lo tanto, las rutas absolutas siempre inician con / (por ejemplo, <code>/var</code>).</p>
+<p>Las rutas pueden ser <strong>relativas</strong> a nuestro directorio de trabajo actual. El directorio de trabajo actual es denotado con un punto (.) mientras que el directorio inmediatamente arriba de este (su <strong>padre</strong>) es denotado con dos puntos (..).</p>
+<h3 id="instrucción-pwd-present-work-directory"><a class="header" href="#instrucción-pwd-present-work-directory">Instrucción <code>pwd</code> (present work directory)</a></h3>
+<p>Pero, <em>¿en qué directorio de trabajo me encuentro actualmente?</em> La instrucción <code>pwd</code> imprimirá el directorio de trabajo actual:</p>
+<pre><code class="language-bash">[vader@n0 ~]$ pwd
+/home/vader
+</code></pre>
+<h3 id="instrucción-cd-change-directory"><a class="header" href="#instrucción-cd-change-directory">Instrucción <code>cd</code> (change directory)</a></h3>
+<p>Una vez que tenemos idea de dónde nos encontramos, nos gustaría cambiar de directorio. La instrucción <code>cd</code> nos permite movernos entre directorios al suministrar como argumento la ruta absoluta o relativa a donde deseamos dirigirnos. </p>
+<p>Por ejemplo, si queremos dirigirnos al directorio raíz, ejecutamos:</p>
+<pre><code class="language-bash">[vader@n0 ~]$ cd /
+[vader@n0 /]$ 
+</code></pre>
+<p>Si eres muy atento, te darás cuenta que el caracter de tilde (<code>~</code>) cambió a /. El shell inicia sesión desde un directorio especial llamado el directorio <strong>home</strong>. El caracter de tilde (<code>~</code>) es utilizado como un shortcut al directorio home del usuario. </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="administración-de-paquetes"><a class="header" href="#administración-de-paquetes">Administración de paquetes</a></h1>
 <h2 id="distribuciones-linux"><a class="header" href="#distribuciones-linux">Distribuciones Linux</a></h2>
 <h2 id="los-paquetes-y-sus-gestores"><a class="header" href="#los-paquetes-y-sus-gestores">Los paquetes y sus gestores</a></h2>
@@ -415,6 +478,22 @@ sudo gdebi rstudio-server-2023.12.0-369-amd64.deb
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
