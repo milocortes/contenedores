@@ -5,7 +5,7 @@
 # Introducción a Linux
 
 - [Instalación de máquina virtual](linux/instalacion_mv.md)
-- [Introducción a la linea de comandos]()
+- [Introducción a la linea de comandos](linux/cli.md)
 - [Administración de paquetes](linux/administracion_paquetes.md)
 - [Configuración de usuarios y grupos]()
 - [Jerarquía de directorios]()
